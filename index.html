@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>
+            Pixel Painter
+        </title>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+        <script type="text/javascript" src="scripts/pixel-painter-scripts.js"></script>
+
+        <link rel="stylesheet" href="styles/pixel-painter-styles.css">
+
+    </head>
+
+    <body>
+
+        <div id="app-container" data-ng-app="PixelPainterApp">
+
+            <div id="pixel-painter-container" data-ng-controller="AppController">
+
+                <div id="pixel-painter-toolbar">
+
+                    toolbar
+
+                    <input ng-model="zoomFactor">
+
+                </div>
+
+                <div id="pixel-painter-viewport" data-sync-height>
+
+                    <table id="pixel-painter-canvas" data-handle-canvas>
+
+                        <tr class="pixel-row" data-ng-repeat="row in pixelMap">
+
+                            <td class="pixel" data-ng-repeat="pixel in row" data-handle-pixel>
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,75 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#app-container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid lightgrey;
+    margin: auto;
+}
+
+#pixel-painter-container {
+    width: 100%;
+    height: 100%;
+    background-color: #fefefe;
+}
+
+#pixel-painter-container #pixel-painter-toolbar {
+    width: 100%;
+    float: left;
+    height: 40px;
+    border-bottom: 1px solid lightgrey;
+}
+
+#pixel-painter-container #pixel-painter-viewport {
+    width: 100%;
+    overflow: auto;
+    float: left;
+}
+
+#pixel-painter-canvas {
+    border-collapse: collapse;
+    /*margin: 20px auto;*/
+}
+
+.pixel-row {
+    width: auto;
+    height: auto;
+}
+
+.pixel-row .pixel {
+    border: 1px solid lightgrey;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.zoom-factor-zero .pixel-row .pixel {
+    width: 38px;
+    height: 38px;
+}
+
+.zoom-factor-one .pixel-row .pixel {
+    width: 18px;
+    height: 18px;
+}
+
+.zoom-factor-two .pixel-row .pixel {
+    width: 8px;
+    height: 8px;
+}
+.zoom-factor-three .pixel-row .pixel {
+    width: 3px;
+    height: 3px;
+}
