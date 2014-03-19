@@ -32,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.1300578" vertical-offset="0" max-vertical-offset="692">
+            <state line="6" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
               <folding />
             </state>
           </provider>
@@ -50,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pixel-painter-scripts.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="pixel-painter-scripts.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/pixel-painter-scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="54" selection-start="4254" selection-end="4254" vertical-scroll-proportion="0.0" vertical-offset="1406" max-vertical-offset="3585">
+            <state line="273" column="28" selection-start="9345" selection-end="9345" vertical-scroll-proportion="6.0309277" vertical-offset="0" max-vertical-offset="4230">
               <folding />
             </state>
           </provider>
@@ -71,10 +71,10 @@
       <list>
         <option value="$PROJECT_DIR$/scripts/pixelpainter.js" />
         <option value="$PROJECT_DIR$/styles/pixel-painter-styles.css" />
-        <option value="$PROJECT_DIR$/scripts/pixel-painter-scripts.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/scripts/pixel-painter-scripts.js" />
       </list>
     </option>
   </component>
@@ -290,9 +290,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/pixel-painter-scripts.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="54" selection-start="4254" selection-end="4254" vertical-scroll-proportion="0.0" vertical-offset="1406" max-vertical-offset="3585">
+        <state line="37" column="33" selection-start="1059" selection-end="1059" vertical-scroll-proportion="-19.166666" vertical-offset="95" max-vertical-offset="855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
           <folding />
         </state>
       </provider>
@@ -304,16 +311,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/scripts/pixel-painter-scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="33" selection-start="1059" selection-end="1059" vertical-scroll-proportion="-19.166666" vertical-offset="95" max-vertical-offset="855">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.1300578" vertical-offset="0" max-vertical-offset="692">
+        <state line="273" column="28" selection-start="9345" selection-end="9345" vertical-scroll-proportion="6.0309277" vertical-offset="0" max-vertical-offset="4230">
           <folding />
         </state>
       </provider>
