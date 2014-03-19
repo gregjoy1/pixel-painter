@@ -35,7 +35,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="0.1300578" vertical-offset="0" max-vertical-offset="692">
+            <state line="6" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.1300578" vertical-offset="0" max-vertical-offset="692">
               <folding />
             </state>
           </provider>
@@ -73,6 +73,7 @@
         <option value="$PROJECT_DIR$/styles/pixel-painter-styles.css" />
         <option value="$PROJECT_DIR$/scripts/pixel-painter-scripts.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -312,7 +313,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="0.1300578" vertical-offset="0" max-vertical-offset="692">
+        <state line="6" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.1300578" vertical-offset="0" max-vertical-offset="692">
           <folding />
         </state>
       </provider>
