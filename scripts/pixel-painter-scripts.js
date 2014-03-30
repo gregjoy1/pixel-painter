@@ -13,7 +13,7 @@ pixelPainterApp.controller('AppController', function($scope) {
 
 });
 
-pixelPainterApp.directive('handleCanvas', function() {
+pixelPainterApp.directive('handleCanvas', function(globalService) {
     return {
         controller: function($scope, $element) {
 
@@ -60,31 +60,11 @@ pixelPainterApp.directive('handleCanvas', function() {
 
             var zoomCanvasToFactor = function(factor) {
 
-                // define zoom factors
-                var zoomFactors = [
-                    {
-                        className: 'zoom-factor-zero',
-                        size: 40
-                    },
-                    {
-                        className: 'zoom-factor-one',
-                        size: 20
-                    },
-                    {
-                        className: 'zoom-factor-two',
-                        size: 10
-                    },
-                    {
-                        className: 'zoom-factor-three',
-                        size: 5
-                    }
-                ];
-
                 // if invalid factor is entered, use default
                 var selectedZoomFactor = (
-                    zoomFactors[factor] == undefined ?
-                        zoomFactors[0] :
-                        zoomFactors[factor]
+                    globalService.zoomFactors[factor] == undefined ?
+                        globalService.zoomFactors[0] :
+                        globalService.zoomFactors[factor]
                 );
 
                 // work out width and height of table to ensure scrolling works as desired
@@ -119,6 +99,9 @@ pixelPainterApp.directive('handleCanvas', function() {
 
                 // if the event call has already been made, then ignore it, if not execute it
                 if(!hasEventAlreadyBeenCalled) {
+
+                    // cludge to hide colour picker when canvas is clicked
+                    $scope.hideColourPicker();
 
                     // use tool at desired location
                     $scope.useToolOnPixel(pixelX, pixelY, colour, toolId);
@@ -168,7 +151,7 @@ pixelPainterApp.directive('handleCanvas', function() {
     };
 });
 
-pixelPainterApp.directive('handlePixel', function(eventService) {
+pixelPainterApp.directive('handlePixel', function(globalService) {
     return {
         controller: function($scope, $element) {
 
@@ -192,8 +175,8 @@ pixelPainterApp.directive('handlePixel', function(eventService) {
                 event.preventDefault();
                 event.stopImmediatePropagation();
 
-                // set isMouseDown to false in eventService singleton
-                eventService.isMouseDown = false;
+                // set isMouseDown to false in globalService singleton
+                globalService.isMouseDown = false;
 
             };
 
@@ -202,7 +185,7 @@ pixelPainterApp.directive('handlePixel', function(eventService) {
                 event.stopImmediatePropagation();
 
                 // if mouse click is down when moved, apply tool to pixel
-                if(eventService.isMouseDown) {
+                if(globalService.isMouseDown) {
                     $scope.restrictEventCallsToOne(
                         $scope.pixel.x,
                         $scope.pixel.y,
@@ -216,8 +199,8 @@ pixelPainterApp.directive('handlePixel', function(eventService) {
                 event.preventDefault();
                 event.stopImmediatePropagation();
 
-                // set isMouseDown to true in eventService singleton
-                eventService.isMouseDown = true;
+                // set isMouseDown to true in globalService singleton
+                globalService.isMouseDown = true;
 
                 $scope.restrictEventCallsToOne(
                     $scope.pixel.x,
@@ -230,6 +213,48 @@ pixelPainterApp.directive('handlePixel', function(eventService) {
         }
     }
 });
+
+pixelPainterApp.directive('handleToolbar', function(globalService, helperService) {
+    return {
+        controller: function($scope, $element) {
+
+            $scope.zoomFactorButtons = globalService.zoomFactors;
+
+            $scope.colourPickerValue = '';
+
+            $scope.$watch('colourPickerValue', function() {
+                $scope.currentColour = helperService.HexStringToRGBArray($scope.colourPickerValue);
+            });
+
+            $scope.zoomFactorContainerClass = {
+                'show' : false
+            };
+
+            $scope.toggleShowZoomFactor = function() {
+                $scope.hideColourPicker();
+                $scope.zoomFactorContainerClass['show'] = !$scope.zoomFactorContainerClass['show'];
+            };
+
+            $scope.changeZoomFactor = function(zoomFactor) {
+                $scope.hideColourPicker();
+                $scope.zoomFactor = zoomFactor;
+                $scope.zoomFactorContainerClass['show'] = false;
+            };
+
+            // abit of a cludge to ensure colour picker is shown
+            $scope.showColourPicker = function() {
+                document.getElementById('toolbarColourSelect').color.showPicker();
+            };
+
+            // cludge to ensure colour picker is hidden
+            $scope.hideColourPicker = function() {
+                document.getElementById('toolbarColourSelect').color.hidePicker();
+            };
+
+        }
+    }
+});
+
 
 pixelPainterApp.directive('syncHeight', function($window) {
 
@@ -268,10 +293,82 @@ pixelPainterApp.directive('syncHeight', function($window) {
 
 });
 
-pixelPainterApp.service('eventService', function() {
+pixelPainterApp.service('globalService', function() {
 
     // global singleton boolean so that the entire application knows if the
     // mouse button is down.
     this.isMouseDown = false;
 
+    // define zoom factors
+    this.zoomFactors = [
+        {
+            className: 'zoom-factor-zero',
+            buttonTitle: 1,
+            zoomFactor: 0,
+            size: 48
+        },
+        {
+            className: 'zoom-factor-one',
+            buttonTitle: 2,
+            zoomFactor: 1,
+            size: 43
+        },
+        {
+            className: 'zoom-factor-two',
+            buttonTitle: 3,
+            zoomFactor: 2,
+            size: 38
+        },
+        {
+            className: 'zoom-factor-three',
+            buttonTitle: 4,
+            zoomFactor: 3,
+            size: 33
+        },
+        {
+            className: 'zoom-factor-four',
+            buttonTitle: 5,
+            zoomFactor: 4,
+            size: 28
+        },
+        {
+            className: 'zoom-factor-five',
+            buttonTitle: 6,
+            zoomFactor: 5,
+            size: 23
+        },
+        {
+            className: 'zoom-factor-six',
+            buttonTitle: 7,
+            zoomFactor: 6,
+            size: 18
+        },
+        {
+            className: 'zoom-factor-seven',
+            buttonTitle: 8,
+            zoomFactor: 7,
+            size: 13
+        }
+    ];
+
+});
+
+pixelPainterApp.service('helperService', function() {
+
+    this.HexStringToRGBArray = function(hex) {
+
+        // strip # out of hex string
+        hex = (
+            hex[0] == '#' ?
+                hex.substr(1, hex.length) :
+                hex
+        );
+
+        return [
+            parseInt(hex.substr(0, 2), 16),
+            parseInt(hex.substr(2, 2), 16),
+            parseInt(hex.substr(4, 2), 16)
+        ];
+
+    };
 });

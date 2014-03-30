@@ -8,8 +8,10 @@
         </title>
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+        <script type="text/javascript" src="scripts/jscolor/jscolor.js"></script>
         <script type="text/javascript" src="scripts/pixel-painter-scripts.js"></script>
 
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="styles/pixel-painter-styles.css">
 
     </head>
@@ -20,11 +22,39 @@
 
             <div id="pixel-painter-container" data-ng-controller="AppController">
 
-                <div id="pixel-painter-toolbar">
+                <div id="pixel-painter-toolbar" data-handle-toolbar>
 
-                    toolbar
+                    <div id="zoom-control-container" data-ng-class="zoomFactorContainerClass">
 
-                    <input ng-model="zoomFactor">
+                        <div class="button" data-ng-click="toggleShowZoomFactor()">
+                            Zoom
+                        </div>
+
+                        <div id="zoom-button-container">
+
+                            <div class="button"
+                                 data-ng-class="{'selected': (zoomFactor == zoomFactorButton.zoomFactor)}"
+                                 data-ng-click="changeZoomFactor(zoomFactorButton.zoomFactor)"
+                                 data-ng-repeat="zoomFactorButton in zoomFactorButtons">
+                                {{zoomFactorButton.buttonTitle}}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="colour-control-container" data-ng-class="zoomFactorContainerClass">
+
+                        <span class="title" data-ng-click="showColourPicker()">
+                            Selected Colour:
+                        </span>
+
+                        <input class="color {pickerFaceColor:'white',pickerFace:1,pickerBorder:1,pickerInsetColor:'lightgrey', hash: true}"
+                               id="toolbarColourSelect"
+                               data-ng-click="showColourPicker()"
+                               data-ng-model="colourPickerValue">
+
+                    </div>
 
                 </div>
 
