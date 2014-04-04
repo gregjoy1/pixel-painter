@@ -43,7 +43,7 @@
 
                     </div>
 
-                    <div id="colour-control-container" data-ng-class="zoomFactorContainerClass">
+                    <div id="colour-control-container">
 
                         <span class="title" data-ng-click="showColourPicker()">
                             Selected Colour:
@@ -53,6 +53,27 @@
                                id="toolbarColourSelect"
                                data-ng-click="showColourPicker()"
                                data-ng-model="colourPickerValue">
+
+                    </div>
+
+                    <div id="tool-control-container">
+
+                        <span class="title">
+                            Selected Tool:
+                        </span>
+
+                        <div class="button" 
+                            data-ng-class="{selected: (currentToolId == 'brush')}" 
+                            data-ng-click="changeTool('brush')">
+                            Brush
+                        </div>
+
+                        <div class="button" 
+                            data-ng-class="{selected: (currentToolId == 'fill')}"
+                            data-ng-click="changeTool('fill')">
+                            Fill
+                        </div>
+
 
                     </div>
 

@@ -138,7 +138,7 @@ body {
 
 .button {
     background-color: #FFFFFF;
-    height: 40px;
+    height: 100%;
     width: 40px;
     float: left;
     text-align: center;
@@ -160,7 +160,8 @@ body {
 }
 
 #colour-control-container {
-
+    width: 175px;
+    float: left;
 }
 
 #colour-control-container input {
@@ -169,6 +170,7 @@ body {
     font-size: 1.0em;
     padding: 0 5px 0 5px;
     margin-left: 0;
+    cursor: pointer;
 }
 
 #colour-control-container .title {
@@ -177,5 +179,28 @@ body {
     border-right: 0;
     height: 32px;
     padding: 5px;
-    margin: 3px 0 3px 3px
+    margin: 3px 0 3px 3px;
+    cursor: pointer;
+}
+
+#tool-control-container {
+    width: 168px;
+    border-right: 1px solid lightgrey;
+    float: left;
+}
+
+#tool-control-container .title {
+    background-color: #FFFFFF;
+    border: 1px solid lightgrey;
+    border-right: 0;
+    height: 32px;
+    padding: 0 5px 0 5px;
+    margin: 3px 0 3px 3px;
+    cursor: pointer;
+    float: left;
+    line-height: 32px;
+}
+
+#tool-control-container .button {
+    border-left: 1px solid lightgrey;
 }

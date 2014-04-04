@@ -130,12 +130,63 @@ pixelPainterApp.directive('handleCanvas', function(globalService) {
             // define tools
             $scope.tools = {
                 brush: {
-                    id: 'Paint Brush',
+                    id: 'brush',
                     useTool: function(pixelX, pixelY, colour) {
                         // cludge? :(
                         $scope.$apply(function() {
                             $scope.pixelMap[pixelY][pixelX].colour = colour;
                         });
+                    }
+                },
+                fill: {
+                    id: 'fill',
+                    useTool: function(pixelX, pixelY, replaceColour) {
+
+                        var desiredColour = $scope.pixelMap[pixelX][pixelY].colour;
+
+                        // another cludge? :(
+                        $scope.$apply(function() {
+                            $scope.tools.fill.fill(
+                                pixelX,
+                                pixelY,
+                                desiredColour,
+                                replaceColour
+                            );
+                        });
+                    },
+                    fill: function(pixelX, pixelY, replaceColour, desiredColour)
+                    {
+
+                        // recursively fill pixel map
+                        if($scope.pixelMap[pixelY][pixelX].colour == desiredColour){
+                            return false;
+                        } else {
+                  
+                            $scope.pixelMap[pixelY][pixelX].colour = desiredColour;
+
+                            // check left
+                            if((pixelX - 1) >= 0) {
+                                this.fill((pixelX - 1), pixelY, replaceColour, desiredColour);
+                            }
+
+                            // check right
+                            if((pixelX + 1) < $scope.width) {
+                                this.fill((pixelX + 1), pixelY, replaceColour, desiredColour);
+                            }
+
+                            // check top
+                            if((pixelY - 1) >= 0) {
+                                this.fill(pixelX, (pixelY - 1), replaceColour, desiredColour);
+                            }
+
+                            // check bottom
+                            if((pixelY + 1) < $scope.height) {
+                                this.fill(pixelX, (pixelY + 1), replaceColour ,desiredColour);
+                            }
+
+                            return true;
+                        }
+
                     }
                 }
             };
@@ -248,7 +299,14 @@ pixelPainterApp.directive('handleToolbar', function(globalService, helperService
 
             // cludge to ensure colour picker is hidden
             $scope.hideColourPicker = function() {
-                document.getElementById('toolbarColourSelect').color.hidePicker();
+                var colorPickerInput = document.getElementById('toolbarColourSelect');
+                colorPickerInput.blur();
+                colorPickerInput.color.hidePicker();
+            };
+
+            $scope.changeTool = function(zoomTool) {
+                $scope.hideColourPicker();
+                $scope.currentToolId = zoomTool;
             };
 
         }
