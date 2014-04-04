@@ -62,44 +62,8 @@ body {
     user-select: none;
 }
 
-.zoom-factor-zero .pixel-row .pixel {
-    width: 48px;
-    height: 48px;
-}
-
-.zoom-factor-one .pixel-row .pixel {
-    width: 43px;
-    height: 43px;
-}
-
-.zoom-factor-two .pixel-row .pixel {
-    width: 38px;
-    height: 38px;
-}
-
-.zoom-factor-three .pixel-row .pixel {
-    width: 33px;
-    height: 33px;
-}
-
-.zoom-factor-four .pixel-row .pixel {
-    width: 28px;
-    height: 28px;
-}
-
-.zoom-factor-five .pixel-row .pixel {
-    width: 23px;
-    height: 23px;
-}
-
-.zoom-factor-six .pixel-row .pixel {
-    width: 18px;
-    height: 18px;
-}
-
-.zoom-factor-seven .pixel-row .pixel {
-    width: 13px;
-    height: 13px;
+.no-grid .pixel-row .pixel {
+    border: none;
 }
 
 #zoom-control-container {
@@ -149,6 +113,15 @@ body {
     -moz-transition: background-color 0.2s ease;
     -ms-transition: background-color 0.2s ease;
     -o-transition: background-color 0.2s ease;
+}
+
+.button,.title {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .button.selected {
@@ -203,4 +176,9 @@ body {
 
 #tool-control-container .button {
     border-left: 1px solid lightgrey;
+}
+
+#hide-grid-button {
+    width: 80px;
+    border-right: 1px solid lightgrey;
 }

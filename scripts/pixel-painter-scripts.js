@@ -9,7 +9,9 @@ pixelPainterApp.controller('AppController', function($scope) {
     $scope.currentColour = [0, 0, 0];
 
     // defines currently used zoom factor (default 40x40)
-    $scope.zoomFactor = 0
+    $scope.zoomFactor = 0;
+
+    $scope.showGrid = true;
 
 });
 
@@ -22,9 +24,6 @@ pixelPainterApp.directive('handleCanvas', function(globalService) {
             $scope.height = 0;
 
             $scope.canvasStyle = {};
-
-            // set default of 40px x 40px pixel size
-            $scope.canvasClass = 'zoom-factor-zero';
 
             // pixelMap 2d array containing all
             $scope.pixelMap = [];
@@ -72,9 +71,6 @@ pixelPainterApp.directive('handleCanvas', function(globalService) {
                     width: ($scope.width * selectedZoomFactor.size) + 'px',
                     height: ($scope.height * selectedZoomFactor.size) + 'px'
                 });
-
-                // change canvas class name to zoomFactor so that pixels resize
-                $scope.canvasClass = selectedZoomFactor.className;
 
             };
 
@@ -140,17 +136,17 @@ pixelPainterApp.directive('handleCanvas', function(globalService) {
                 },
                 fill: {
                     id: 'fill',
-                    useTool: function(pixelX, pixelY, replaceColour) {
-
-                        var desiredColour = $scope.pixelMap[pixelX][pixelY].colour;
+                    useTool: function(pixelX, pixelY, desiredColour) {
+                        // find colour to replace with desired colour
+                        var replaceColour = $scope.pixelMap[pixelY][pixelX].colour;
 
                         // another cludge? :(
                         $scope.$apply(function() {
                             $scope.tools.fill.fill(
                                 pixelX,
                                 pixelY,
-                                desiredColour,
-                                replaceColour
+                                replaceColour,
+                                desiredColour
                             );
                         });
                     },
@@ -158,7 +154,9 @@ pixelPainterApp.directive('handleCanvas', function(globalService) {
                     {
 
                         // recursively fill pixel map
-                        if($scope.pixelMap[pixelY][pixelX].colour == desiredColour){
+
+                        // cant compare array, so make it string so it can be compared
+                        if($scope.pixelMap[pixelY][pixelX].colour.toString() != replaceColour.toString()) {
                             return false;
                         } else {
                   
@@ -309,6 +307,13 @@ pixelPainterApp.directive('handleToolbar', function(globalService, helperService
                 $scope.currentToolId = zoomTool;
             };
 
+            $scope.toggleShowGrid = function() {
+                $scope.showGrid = !$scope.showGrid;
+                $scope.showGridButtonText = ($scope.showGrid ? 'Hide Grid' : 'Show Grid');
+            };
+
+            $scope.showGridButtonText = 'Hide Grid'
+
         }
     }
 });
@@ -360,49 +365,41 @@ pixelPainterApp.service('globalService', function() {
     // define zoom factors
     this.zoomFactors = [
         {
-            className: 'zoom-factor-zero',
             buttonTitle: 1,
             zoomFactor: 0,
             size: 48
         },
         {
-            className: 'zoom-factor-one',
             buttonTitle: 2,
             zoomFactor: 1,
             size: 43
         },
         {
-            className: 'zoom-factor-two',
             buttonTitle: 3,
             zoomFactor: 2,
             size: 38
         },
         {
-            className: 'zoom-factor-three',
             buttonTitle: 4,
             zoomFactor: 3,
             size: 33
         },
         {
-            className: 'zoom-factor-four',
             buttonTitle: 5,
             zoomFactor: 4,
             size: 28
         },
         {
-            className: 'zoom-factor-five',
             buttonTitle: 6,
             zoomFactor: 5,
             size: 23
         },
         {
-            className: 'zoom-factor-six',
             buttonTitle: 7,
             zoomFactor: 6,
             size: 18
         },
         {
-            className: 'zoom-factor-seven',
             buttonTitle: 8,
             zoomFactor: 7,
             size: 13
@@ -429,4 +426,5 @@ pixelPainterApp.service('helperService', function() {
         ];
 
     };
+
 });

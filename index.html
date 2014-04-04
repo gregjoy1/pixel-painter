@@ -24,6 +24,11 @@
 
                 <div id="pixel-painter-toolbar" data-handle-toolbar>
 
+                    <div id="general-button-control-container">
+                        <div id="hide-grid-button" class="button" data-ng-click="toggleShowGrid()">
+                            {{showGridButtonText}}
+                        </div>
+                    </div>
                     <div id="zoom-control-container" data-ng-class="zoomFactorContainerClass">
 
                         <div class="button" data-ng-click="toggleShowZoomFactor()">
@@ -81,7 +86,7 @@
 
                 <div id="pixel-painter-viewport" data-sync-height>
 
-                    <table id="pixel-painter-canvas" data-handle-canvas>
+                    <table id="pixel-painter-canvas" data-ng-class="{'no-grid': !showGrid}" data-handle-canvas>
 
                         <tr class="pixel-row" data-ng-repeat="row in pixelMap">
 
