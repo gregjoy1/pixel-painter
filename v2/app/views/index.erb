@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>
+            Pixel Painter
+        </title>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+        <script type="text/javascript" src="/javascripts/jscolor/jscolor.js"></script>
+        <script type="text/javascript" src="/javascripts/pixel-painter-scripts.js"></script>
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/stylesheets/application.css">
+
+    </head>
+
+    <body>
+
+        <div id="app-container" data-ng-app="PixelPainterApp">
+
+            <div id="pixel-painter-container" data-ng-controller="AppController">
+
+                <div id="pixel-painter-toolbar" data-handle-toolbar>
+
+                    <div id="general-button-control-container">
+                        <div id="hide-grid-button" class="button" data-ng-click="toggleShowGrid()">
+                            {{showGridButtonText}}
+                        </div>
+                    </div>
+                    <div id="zoom-control-container" data-ng-class="zoomFactorContainerClass">
+
+                        <div class="button" data-ng-click="toggleShowZoomFactor()">
+                            Zoom
+                        </div>
+
+                        <div id="zoom-button-container">
+
+                            <div class="button"
+                                 data-ng-class="{'selected': (zoomFactor == zoomFactorButton.zoomFactor)}"
+                                 data-ng-click="changeZoomFactor(zoomFactorButton.zoomFactor)"
+                                 data-ng-repeat="zoomFactorButton in zoomFactorButtons">
+                                {{zoomFactorButton.buttonTitle}}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="colour-control-container">
+
+                        <span class="title" data-ng-click="showColourPicker()">
+                            Selected Colour:
+                        </span>
+
+                        <input class="color {pickerFaceColor:'white',pickerFace:1,pickerBorder:1,pickerInsetColor:'lightgrey', hash: true}"
+                               id="toolbarColourSelect"
+                               data-ng-click="showColourPicker()"
+                               data-ng-model="colourPickerValue">
+
+                    </div>
+
+                    <div id="tool-control-container">
+
+                        <span class="title">
+                            Selected Tool:
+                        </span>
+
+                        <div class="button" 
+                            data-ng-class="{selected: (currentToolId == 'brush')}" 
+                            data-ng-click="changeTool('brush')">
+                            Brush
+                        </div>
+
+                        <div class="button" 
+                            data-ng-class="{selected: (currentToolId == 'fill')}"
+                            data-ng-click="changeTool('fill')">
+                            Fill
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div id="pixel-painter-viewport" data-sync-height>
+
+                    <table id="pixel-painter-canvas" data-ng-class="{'no-grid': !showGrid}" data-handle-canvas>
+
+                        <tr class="pixel-row" data-ng-repeat="row in pixelMap">
+
+                            <td class="pixel" data-ng-repeat="pixel in row" data-handle-pixel>
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

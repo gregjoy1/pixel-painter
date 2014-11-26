@@ -1,0 +1,193 @@
+/* line 1, ../../app/stylesheets/components/_structure.sass */
+html {
+  height: 100%;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+/* line 5, ../../app/stylesheets/components/_structure.sass */
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* line 10, ../../app/stylesheets/components/_structure.sass */
+#app-container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid lightgrey;
+  margin: auto;
+}
+
+/* line 16, ../../app/stylesheets/components/_structure.sass */
+#pixel-painter-container {
+  width: 100%;
+  height: 100%;
+  background-color: #fefefe;
+}
+
+/* line 21, ../../app/stylesheets/components/_structure.sass */
+#pixel-painter-toolbar {
+  width: 100%;
+  float: left;
+  height: 40px;
+  border-bottom: 1px solid lightgrey;
+}
+/* line 27, ../../app/stylesheets/components/_structure.sass */
+#pixel-painter-toolbar input {
+  height: 32px;
+  margin: 3px;
+  border: 1px solid lightgrey;
+}
+
+/* line 32, ../../app/stylesheets/components/_structure.sass */
+#pixel-painter-viewport {
+  width: 100%;
+  overflow: auto;
+  float: left;
+}
+
+/* line 37, ../../app/stylesheets/components/_structure.sass */
+#pixel-painter-canvas {
+  border-collapse: collapse;
+}
+
+/* line 40, ../../app/stylesheets/components/_structure.sass */
+.pixel-row {
+  width: auto;
+  height: auto;
+}
+/* line 44, ../../app/stylesheets/components/_structure.sass */
+.pixel-row .pixel {
+  border: 1px solid lightgrey;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* line 51, ../../app/stylesheets/components/_structure.sass */
+.no-grid .pixel-row .pixel {
+  border: none;
+}
+
+/* line 54, ../../app/stylesheets/components/_structure.sass */
+#zoom-control-container {
+  overflow: hidden;
+  width: 65px;
+  float: left;
+  -moz-transition: width 0.2s ease;
+  -o-transition: width 0.2s ease;
+  -webkit-transition: width 0.2s ease;
+  transition: width 0.2s ease;
+}
+/* line 61, ../../app/stylesheets/components/_structure.sass */
+#zoom-control-container.show {
+  width: 313px;
+}
+/* line 64, ../../app/stylesheets/components/_structure.sass */
+#zoom-control-container > .button {
+  background-color: #EEE;
+}
+/* line 67, ../../app/stylesheets/components/_structure.sass */
+#zoom-control-container .button {
+  width: 64px;
+  border-right: 1px solid lightgrey;
+}
+/* line 71, ../../app/stylesheets/components/_structure.sass */
+#zoom-control-container #zoom-button-container {
+  width: 328px;
+}
+/* line 73, ../../app/stylesheets/components/_structure.sass */
+#zoom-control-container #zoom-button-container .button {
+  width: 30px;
+  border-right: 1px solid lightgrey;
+}
+
+/* line 77, ../../app/stylesheets/components/_structure.sass */
+.button {
+  background-color: #FFF;
+  height: 100%;
+  width: 40px;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  -moz-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+/* line 88, ../../app/stylesheets/components/_structure.sass */
+.button,
+.title {
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* line 92, ../../app/stylesheets/components/_structure.sass */
+.button.selected,
+.title.selected {
+  background-color: #EEE;
+}
+/* line 95, ../../app/stylesheets/components/_structure.sass */
+.button:hover,
+.title:hover {
+  background-color: #EEE;
+}
+
+/* line 98, ../../app/stylesheets/components/_structure.sass */
+#colour-control-container {
+  width: 175px;
+  float: left;
+}
+/* line 102, ../../app/stylesheets/components/_structure.sass */
+#colour-control-container input {
+  width: 55px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1em;
+  padding: 0 5px 0 5px;
+  margin-left: 0;
+  cursor: pointer;
+}
+/* line 110, ../../app/stylesheets/components/_structure.sass */
+#colour-control-container .title {
+  background-color: #FFF;
+  border: 1px solid lightgrey;
+  border-right: 0;
+  height: 32px;
+  padding: 5px;
+  margin: 3px 0 3px 3px;
+  cursor: pointer;
+}
+
+/* line 119, ../../app/stylesheets/components/_structure.sass */
+#tool-control-container {
+  width: 168px;
+  border-right: 1px solid lightgrey;
+  float: left;
+}
+/* line 124, ../../app/stylesheets/components/_structure.sass */
+#tool-control-container .title {
+  background-color: #FFF;
+  border: 1px solid lightgrey;
+  border-right: 0;
+  height: 32px;
+  padding: 0 5px 0 5px;
+  margin: 3px 0 3px 3px;
+  cursor: pointer;
+  float: left;
+  line-height: 32px;
+}
+/* line 135, ../../app/stylesheets/components/_structure.sass */
+#tool-control-container .button {
+  border-left: 1px solid lightgrey;
+}
+
+/* line 138, ../../app/stylesheets/components/_structure.sass */
+#hide-grid-button {
+  width: 80px;
+  border-right: 1px solid lightgrey;
+}
