@@ -3,8 +3,10 @@ module Pxlpainter
     use ConnectionPoolManagement
     register Padrino::Mailer
     register Padrino::Helpers
+    register Padrino::Admin::AccessControl
     register CompassInitializer
 
+    require 'json'
 
     enable :sessions
 
