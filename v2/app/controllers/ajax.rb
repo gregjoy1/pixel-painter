@@ -1,5 +1,7 @@
 Pxlpainter::App.controllers :ajax do
 
+	# - A C C O U N T   M A N A G E M E N T   R O U T E S - #
+
     get :is_logged_in do
     	# Set JSON content type header
     	get_content_type_header
@@ -7,6 +9,19 @@ Pxlpainter::App.controllers :ajax do
     	# Generate JSON response
     	generate_response !logged_in?, (strip_account_model(current_account) || 'No account logged in')
     end
+
+    get :login do 
+    	# Set JSON content type header
+    	get_content_type_header
+
+    	# Authenticates account if login credentials are provided
+	    if account = Account.authenticate('test@test.com', 'password')
+	    	set_current_account(account)
+		end
+
+    	# Generate JSON response
+    	generate_response !logged_in?, (strip_account_model(current_account) || 'Incorrect account credentials')
+	end
 
     post :login do 
     	# Set JSON content type header
@@ -30,6 +45,56 @@ Pxlpainter::App.controllers :ajax do
 
     	# Generate JSON response
     	generate_response logged_in?, 'Logged out'
+	end
+
+	# - D O C U M E N T   M A N A G E M E N T   R O U T E S - #
+
+	get :get_saved_documents do
+
+		if logged_in?
+			documents = Document.where(:account_id => get_current_account_id).order(:updated_at => :asc)
+			documents = strip_document_model_array documents
+	    	return generate_response true, documents
+		end
+
+    	generate_response true, 'No account logged in'
+
+	end
+
+	put :create_document do
+
+		if logged_in?
+
+			account_id = current_account.id
+
+			if document = create_and_validate_document(params[:name], params[:json], account_id)
+		    	generate_response false, document
+			end
+
+	    	generate_response true, 'Invalid document data'
+
+		end
+
+    	generate_response true, 'No account logged in'
+
+	end
+
+	put :update_document do
+
+		if logged_in?
+
+			account_id = current_account.id
+
+			if document = create_and_validate_document(params[:name], params[:json], account_id)
+		    	generate_response false, document
+			end
+
+	    	generate_response true, 'Invalid document data'
+
+		end
+
+    	generate_response true, 'No account logged in'
+
 	end
 
 end

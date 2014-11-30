@@ -1,0 +1,10 @@
+---
+:orm: activerecord
+:test: rspec
+:mock: none
+:script: none
+:renderer: erb
+:stylesheet: compass
+:namespace: Pxlpainter
+:migration_format: number
+:admin_renderer: erb

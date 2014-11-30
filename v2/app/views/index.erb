@@ -54,10 +54,11 @@
                             Selected Colour:
                         </span>
 
-                        <input class="color {pickerFaceColor:'white',pickerFace:1,pickerBorder:1,pickerInsetColor:'lightgrey', hash: true}"
-                               id="toolbarColourSelect"
-                               data-ng-click="showColourPicker()"
-                               data-ng-model="colourPickerValue">
+                        <input class="color" 
+                                ng-class="{pickerFaceColor:'white',pickerFace:1,pickerBorder:1,pickerInsetColor:'lightgrey', hash: true}"
+                                id="toolbarColourSelect"
+                                data-ng-click="showColourPicker()"
+                                data-ng-model="colourPickerValue">
 
                     </div>
 

@@ -126,6 +126,7 @@ DEPENDENCIES
   bcrypt
   compass
   erubis (~> 2.7.0)
+  json
   mysql2
   padrino (= 0.12.4)
   rack-test
