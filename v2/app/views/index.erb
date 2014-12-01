@@ -7,10 +7,6 @@
             Pixel Painter
         </title>
 
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
-        <script type="text/javascript" src="/javascripts/jscolor/jscolor.js"></script>
-        <script type="text/javascript" src="/javascripts/pixel-painter-scripts.js"></script>
-
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/stylesheets/application.css">
 
@@ -20,89 +16,43 @@
 
         <div id="app-container" data-ng-app="PixelPainterApp">
 
-            <div id="pixel-painter-container" data-ng-controller="AppController">
-
-                <div id="pixel-painter-toolbar" data-handle-toolbar>
-
-                    <div id="general-button-control-container">
-                        <div id="hide-grid-button" class="button" data-ng-click="toggleShowGrid()">
-                            {{showGridButtonText}}
-                        </div>
-                    </div>
-                    <div id="zoom-control-container" data-ng-class="zoomFactorContainerClass">
-
-                        <div class="button" data-ng-click="toggleShowZoomFactor()">
-                            Zoom
-                        </div>
-
-                        <div id="zoom-button-container">
-
-                            <div class="button"
-                                 data-ng-class="{'selected': (zoomFactor == zoomFactorButton.zoomFactor)}"
-                                 data-ng-click="changeZoomFactor(zoomFactorButton.zoomFactor)"
-                                 data-ng-repeat="zoomFactorButton in zoomFactorButtons">
-                                {{zoomFactorButton.buttonTitle}}
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div id="colour-control-container">
-
-                        <span class="title" data-ng-click="showColourPicker()">
-                            Selected Colour:
-                        </span>
-
-                        <input class="color" 
-                                ng-class="{pickerFaceColor:'white',pickerFace:1,pickerBorder:1,pickerInsetColor:'lightgrey', hash: true}"
-                                id="toolbarColourSelect"
-                                data-ng-click="showColourPicker()"
-                                data-ng-model="colourPickerValue">
-
-                    </div>
-
-                    <div id="tool-control-container">
-
-                        <span class="title">
-                            Selected Tool:
-                        </span>
-
-                        <div class="button" 
-                            data-ng-class="{selected: (currentToolId == 'brush')}" 
-                            data-ng-click="changeTool('brush')">
-                            Brush
-                        </div>
-
-                        <div class="button" 
-                            data-ng-class="{selected: (currentToolId == 'fill')}"
-                            data-ng-click="changeTool('fill')">
-                            Fill
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-                <div id="pixel-painter-viewport" data-sync-height>
-
-                    <table id="pixel-painter-canvas" data-ng-class="{'no-grid': !showGrid}" data-handle-canvas>
-
-                        <tr class="pixel-row" data-ng-repeat="row in pixelMap">
-
-                            <td class="pixel" data-ng-repeat="pixel in row" data-handle-pixel>
-                            </td>
-
-                        </tr>
-
-                    </table>
-
-                </div>
-
-            </div>
+            <div class="container" data-ng-view></div>
 
         </div>
+
+        <!-- L O A D   D E P E N D E N C I E S -->
+        <script type="text/javascript" src="/javascripts/bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="/javascripts/bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="/javascripts/bower_components/lodash/dist/lodash.js"></script>
+        <script type="text/javascript" src="/javascripts/jscolor/jscolor.js"></script>
+        
+        <!-- L O A D   A P P -->
+        <script type="text/javascript" src="/javascripts/pixel-painter/app.js"></script>
+
+        <!-- L O A  D   R O O T   C O M P O N E N T S -->
+        <script type="text/javascript" src="/javascripts/pixel-painter/controllers.js"></script>
+        <script type="text/javascript" src="/javascripts/pixel-painter/directives.js"></script>
+        <script type="text/javascript" src="/javascripts/pixel-painter/services.js"></script>
+
+        <!-- E D I T - R O U T E -->
+        <script type="text/javascript" src="/javascripts/pixel-painter/edit-route/scripts/controllers.js"></script>
+        <script type="text/javascript" src="/javascripts/pixel-painter/edit-route/scripts/directives.js"></script>
+        <script type="text/javascript" src="/javascripts/pixel-painter/edit-route/scripts/services.js"></script>
+
+        <!-- L O A D - R O U T E -->
+        <script type="text/javascript" src="/javascripts/pixel-painter/load-route/scripts/controllers.js"></script>
+        <script type="text/javascript" src="/javascripts/pixel-painter/load-route/scripts/directives.js"></script>
+        <script type="text/javascript" src="/javascripts/pixel-painter/load-route/scripts/services.js"></script>
+
+        <!-- L O G I N - R O U T E -->
+        <script type="text/javascript" src="/javascripts/pixel-painter/login-route/scripts/controllers.js"></script>
+        <script type="text/javascript" src="/javascripts/pixel-painter/login-route/scripts/directives.js"></script>
+        <script type="text/javascript" src="/javascripts/pixel-painter/login-route/scripts/services.js"></script>
+
+        <!-- L O G O U  T - R O U T E -->
+        <script type="text/javascript" src="/javascripts/pixel-painter/logout-route/scripts/controllers.js"></script>
+        <script type="text/javascript" src="/javascripts/pixel-painter/logout-route/scripts/directives.js"></script>
+        <script type="text/javascript" src="/javascripts/pixel-painter/logout-route/scripts/services.js"></script>
 
     </body>
 

@@ -114,7 +114,10 @@ module Pxlpainter
 			end
 
 			def strip_document_model document
-
+				
+				# Parse JSON to prevent double escaping
+				document.json = JSON.parse document.json
+				
 				{
 					:id 			=> document.id,
 					:name			=> document.name,

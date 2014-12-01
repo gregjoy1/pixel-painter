@@ -1,0 +1,24 @@
+<div class="load-container">
+	<div class="inner-load-container">
+		<div class="header">
+			<h1>Saved documents</h1>
+		</div>
+		<div class="documents-container">
+			<h4 data-ng-show="loadError">{{ loadError }}</h4>
+
+			<div data-ng-show="!savedDocuments" class="loading">
+				&nbsp;
+			</div>
+
+			<div data-ng-show="savedDocuments" data-ng-repeat="savedDocument in savedDocuments" class="document" data-ng-click="loadDocument(savedDocument)">
+				<h4>{{ savedDocument.name }}</h4>
+				<div data-render-document-preview document-data="savedDocument.data"></div>
+			</div>
+
+			<div data-ng-show="savedDocuments && (savedDocuments.length === 0)">
+				<h4>There are no saved documents...</h4>
+			</div>
+
+		</div>
+	</div>
+</div>

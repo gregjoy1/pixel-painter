@@ -1,0 +1,13 @@
+<div class="login-container">
+	<div class="inner-login-container">
+		<div class="header">
+			<h1>Please Login</h1>
+		</div>
+		<div class="form">
+			<h3 class="login-error" data-ng-show="!!loginError">{{ loginError }}</h3>
+			<input type="text" data-ng-model="loginFormParams.email" placeholder="Email address">
+			<input type="password" data-ng-model="loginFormParams.password" placeholder="Password">
+			<button data-ng-click="submitLoginForm()">Login</button>
+		</div>
+	</div>
+</div>

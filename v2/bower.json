@@ -1,0 +1,23 @@
+{
+  "name": "PxlPainter",
+  "version": "1",
+  "homepage": "https://github.com/gregjoy1/pixel-painter",
+  "authors": [
+    "Greg Joy <gregjoy91@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/public/javascripts/bower_components",
+    "test",
+    "tests"
+  ],
+    "dependencies": {
+      "angular": "1.3.5-build.3634+sha.dde613f",
+      "angular-route": "1.3.5-build.3634+sha.dde613f",
+      "lodash": "2.4.1"
+  }
+}

@@ -1,0 +1,19 @@
+<div id="pixel-painter-container">
+
+    <div id="pixel-painter-toolbar" data-pixel-painter-toolbar></div>
+
+    <div id="pixel-painter-viewport" data-sync-height>
+
+        <table id="pixel-painter-canvas" data-ng-class="{'no-grid': !showGrid}" data-pixel-painter-canvas>
+
+            <tr class="pixel-row" data-ng-repeat="row in pixelMap">
+
+                <td class="pixel" data-ng-repeat="pixel in row" data-pixel-painter-pixel></td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
