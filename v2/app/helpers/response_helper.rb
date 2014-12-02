@@ -15,6 +15,10 @@ module Pxlpainter
 				content_type content_type
 			end
 
+			def set_angular_xsrf_cookie
+				response.set_cookie(:'XSRF-TOKEN', value: (session[:csrf] ||= SecureRandom.hex(32)), expires: Time.now + 3600*24)
+			end
+
 		end
 
 		helpers ResponseHelper

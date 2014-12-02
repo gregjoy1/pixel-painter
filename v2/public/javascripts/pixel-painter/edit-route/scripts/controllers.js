@@ -5,7 +5,8 @@
 
     pixelPainterApp.controller('editController', [
         '$scope',
-        function ($scope) {
+        '$rootScope',
+        function ($scope, $rootScope) {
 
             // defines currently used tool (default brush)
             $scope.currentToolId = 'brush';

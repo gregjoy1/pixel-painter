@@ -26,7 +26,6 @@
                 console.log($scope.loginFormParams);
                 if($scope.loginFormParams.email !== '' && $scope.loginFormParams.password !== '') {
                     userService.login($scope.loginFormParams.email, $scope.loginFormParams.password, function (error, data) {
-                        console.log(error, data);
     					if(error) {
 							$scope.loginError = data;
     					} else {

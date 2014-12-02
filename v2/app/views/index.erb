@@ -12,9 +12,9 @@
 
     </head>
 
-    <body>
+    <body data-ng-class="{overflow-hidden: !!overflow-hidden}" data-ng-app="PixelPainterApp">
 
-        <div id="app-container" data-ng-app="PixelPainterApp">
+        <div id="app-container">
 
             <div class="container" data-ng-view></div>
 
@@ -23,6 +23,7 @@
         <!-- L O A D   D E P E N D E N C I E S -->
         <script type="text/javascript" src="/javascripts/bower_components/angular/angular.js"></script>
         <script type="text/javascript" src="/javascripts/bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="/javascripts/bower_components/angular-cookies/angular-cookies.js"></script>
         <script type="text/javascript" src="/javascripts/bower_components/lodash/dist/lodash.js"></script>
         <script type="text/javascript" src="/javascripts/jscolor/jscolor.js"></script>
         

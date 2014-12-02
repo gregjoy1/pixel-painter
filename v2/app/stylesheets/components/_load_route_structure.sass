@@ -1,0 +1,63 @@
+.load-container
+	width: 100%
+	display: block
+	.inner-load-container
+		.header
+			width: 100%
+			height: 50px
+			background: 
+				color: #ccc
+			position: relative
+			h1
+				text-align: center
+				display: block
+				line-height: 50px
+				margin: 0
+			button
+				position: absolute
+				top: 5px
+				float: right
+				width: 150px
+				height: 40px
+				&.new
+					right: 170px
+				&.logout
+					right: 10px
+
+		.documents-container
+			width: 100%
+			margin: auto
+			display: block
+			overflow: auto
+			height: 100%
+			padding:
+				bottom: 20px
+			.document
+				@include transition(background-color 0.3s, border-radius 0.3s)
+				@include border-radius(0)
+				width: 30%
+				border: 1px solid #ccc
+				margin: 1.5%
+				float: left
+				padding: 10px 0
+				cursor: pointer
+				&:hover
+					@include border-radius(10px)
+					background:
+						color: #ddd
+					img
+						border: 1px solid #ccc
+				h4
+					margin: 10px
+						top: 0
+					text-align: center
+				> div,
+				img
+					width: 90%
+					margin: auto
+					display: block
+				> div
+					padding: 5px
+				img
+					@include transition(border-color 0.3s)
+					border: 1px solid transparent

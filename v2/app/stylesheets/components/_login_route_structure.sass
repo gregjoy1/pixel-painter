@@ -1,0 +1,46 @@
+$login-container-size: 400px
+.login-container
+	width: $login-container-size
+	min-height: 210px
+	border: 1px solid #ccc
+	display: block
+	margin: auto
+		top: 40px
+	.inner-login-container
+		width: 100%
+		height: 100%
+		.header
+			width: 100%
+			height: 50px
+			background: 
+				color: #ccc
+			margin: 
+				bottom: 10px
+			h1
+				text-align: center
+				display: block
+				line-height: 50px
+				margin: 0
+	.form
+		padding: 20px
+			top: 0
+		> *
+			box-sizing: border-box
+		h3
+			&.login-error
+				color: rgb(180, 10, 10)
+		input
+			&[type=text],
+			&[type=password]
+				width: 100%
+				margin:
+					top: 10px
+				height: 35px
+				font: 
+					size: 19px
+				padding: 5px
+		button
+			height: 35px
+			width: 100%
+			margin:
+				top: 10px

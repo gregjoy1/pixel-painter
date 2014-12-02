@@ -2,6 +2,8 @@
 	<div class="inner-load-container">
 		<div class="header">
 			<h1>Saved documents</h1>
+			<button class="new" data-ng-click="newDocument()">New Document</button>
+			<button class="logout" data-ng-click="go('/logout')">Logout</button>
 		</div>
 		<div class="documents-container">
 			<h4 data-ng-show="loadError">{{ loadError }}</h4>

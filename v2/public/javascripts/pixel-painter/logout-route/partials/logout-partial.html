@@ -1,0 +1,8 @@
+<div class="logout-container">
+	<div class="inner-logout-container">
+		<h1>Logging out...</h1>
+		<h3 data-ng-class="{error: logoutError}" data-ng-show="logoutError">{{ 'Error Logging Out: ' + logoutError }}</h3>
+		<h3 data-ng-show="logoutSuccess">{{ 'Logged out successfully' }}</h3>
+		<button data-ng-show="logoutSuccess" data-ng-click="go('/login')">Click here to log back in</button>
+	</div>
+</div>

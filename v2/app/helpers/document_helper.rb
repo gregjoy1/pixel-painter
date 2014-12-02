@@ -59,11 +59,13 @@ module Pxlpainter
 
 				end
 
-				width = document_data.width
-				height = document_data.height
+				width = document_data['width']
+				height = document_data['height']
+
+				puts document_data['data'].inspect
 
 				# Checks that document map height is correct
-				if document_data.data.length != height
+				if document_data['data'].length != height
 
 					return { 
 						:valid => false, 
@@ -73,7 +75,7 @@ module Pxlpainter
 				end
 
 				# Checks that document map width is correct
-				document_data.data.each do |row|
+				document_data['data'].each do |row|
 					
 					if row.length != width
 						return { 

@@ -328,7 +328,13 @@
                     $scope.saveImage = function () {
                         console.log($scope.loadDocument);
                         if($scope.loadDocument) {
-                            // documentSaveLoadService.saveExistingDocument($scope.loadDocument.id, $scope.loadDocument.name, $scope.pixelMap, callback) 
+                            documentSaveLoadService.saveExistingDocument($scope.loadDocument.id, $scope.loadDocument.name, $scope.pixelMap, function (error, data) {
+                                if(error) {
+                                    alert(data);
+                                } else {
+                                    $scope.go('/');
+                                }
+                            });
                         } else {
                             var imageName = prompt('Please enter the title of the image.');
                             documentSaveLoadService.saveNewDocument(imageName, $scope.pixelMap, function (error, data) {

@@ -1,4 +1,4 @@
-(function (angular) {
+(function (angular, _) {
     'use strict';
 
     var pixelPainterApp = angular.module('PixelPainterApp');
@@ -71,6 +71,8 @@
 
             this.saveNewDocument = function (name, json, callback) {
 
+                json = this.parseJSONForSave(json);
+
                 // ensure json var is a string
                 json = (typeof json !== 'string' ? JSON.stringify(json) : json);
 
@@ -89,11 +91,13 @@
 
             this.saveExistingDocument = function (documentId, name, json, callback) {
 
+                json = this.parseJSONForSave(json);
+
                 // ensure json var is a string
                 json = (typeof json !== 'string' ? JSON.stringify(json) : json);
 
                 $http.post(
-                    '/ajax/create_document',
+                    '/ajax/update_document',
                     {
                         document_id: documentId,
                         name: name,
@@ -104,6 +108,24 @@
                 }).error(function (data) {
                     callback(true, '404')
                 });
+            };
+
+            this.parseJSONForSave = function (json) {
+                var parsedJSON = {
+                    width: json[0].length,
+                    height: json.length,
+                    data: []
+                };
+
+                _(json).each(function (row) {
+                    var parsedRow = [];
+                    _(row).each(function (tile) {
+                        parsedRow.push(tile.colour);
+                    });
+                    parsedJSON.data.push(parsedRow);
+                });
+
+                return parsedJSON;
             };
 
         }
@@ -175,4 +197,4 @@
         }
     ]);
 
-}(window.angular));
+}(window.angular, window._));

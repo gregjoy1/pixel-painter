@@ -56,11 +56,18 @@
 
 </div>
 
-<div id="save-control-container">
+<div id="misc-control-container">
 
-    <div class="button" 
-        data-ng-click="saveImage()">
-        Save
+    <div class="button" data-ng-click="saveImage()">
+        Save and quit
+    </div>
+
+    <div class="button" data-ng-click="go('/loader')">
+        Back to loader
+    </div>
+
+    <div class="button" data-ng-click="go('/logout')">
+        Logout
     </div>
 
 </div>

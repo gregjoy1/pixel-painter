@@ -2,7 +2,8 @@
     'use strict';
 
     var pixelPainterApp = angular.module('PixelPainterApp', [
-        'ngRoute'
+        'ngRoute',
+        'ngCookies'
     ]);
 
     pixelPainterApp.config(
@@ -37,7 +38,9 @@
     pixelPainterApp.run([
             '$rootScope',
             '$location',
-            function($rootScope, $location) {
+            '$http',
+            '$cookies',
+            function($rootScope, $location, $http, $cookies) {
                 
                 $rootScope.currentUser = false;
 
@@ -47,6 +50,9 @@
                 $rootScope.go = function(location) {
                     $location.path(location);
                 };
+
+                $http.defaults.headers.post['X_CSRF_TOKEN'] = $cookies['XSRF-TOKEN'];
+
             }
     ]);
 

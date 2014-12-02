@@ -14,7 +14,7 @@
             // redirect if user not logged in
     		userService.isLoggedIn(function (error, data) {
     			if(error) {
-    				$scope.loadError = data;
+    				$scope.go('/login');
     			}
     		});
 
@@ -33,6 +33,11 @@
             $scope.loadDocument = function (documentObject) {
                 $rootScope.loadDocument = documentObject;
                 $scope.go('/edit');
+            };
+
+            $scope.newDocument = function () {
+                $rootScope.loadDocument = false;
+                $scope.go('/edit');                
             };
 
     	}

@@ -8,10 +8,21 @@ html {
 body {
   height: 100%;
   margin: 0;
-  overflow: hidden;
 }
 
-/* line 10, ../../app/stylesheets/components/_structure.sass */
+/* line 1, ../../app/stylesheets/components/_edit_route_structure.sass */
+html {
+  height: 100%;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+/* line 5, ../../app/stylesheets/components/_edit_route_structure.sass */
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* line 9, ../../app/stylesheets/components/_edit_route_structure.sass */
 #app-container {
   width: 100%;
   height: 100%;
@@ -19,45 +30,45 @@ body {
   margin: auto;
 }
 
-/* line 16, ../../app/stylesheets/components/_structure.sass */
+/* line 15, ../../app/stylesheets/components/_edit_route_structure.sass */
 #pixel-painter-container {
   width: 100%;
   height: 100%;
   background-color: #fefefe;
 }
 
-/* line 21, ../../app/stylesheets/components/_structure.sass */
+/* line 20, ../../app/stylesheets/components/_edit_route_structure.sass */
 #pixel-painter-toolbar {
   width: 100%;
   float: left;
   height: 40px;
   border-bottom: 1px solid lightgrey;
 }
-/* line 27, ../../app/stylesheets/components/_structure.sass */
+/* line 26, ../../app/stylesheets/components/_edit_route_structure.sass */
 #pixel-painter-toolbar input {
   height: 32px;
   margin: 3px;
   border: 1px solid lightgrey;
 }
 
-/* line 32, ../../app/stylesheets/components/_structure.sass */
+/* line 31, ../../app/stylesheets/components/_edit_route_structure.sass */
 #pixel-painter-viewport {
   width: 100%;
   overflow: auto;
   float: left;
 }
 
-/* line 37, ../../app/stylesheets/components/_structure.sass */
+/* line 36, ../../app/stylesheets/components/_edit_route_structure.sass */
 #pixel-painter-canvas {
   border-collapse: collapse;
 }
 
-/* line 40, ../../app/stylesheets/components/_structure.sass */
+/* line 39, ../../app/stylesheets/components/_edit_route_structure.sass */
 .pixel-row {
   width: auto;
   height: auto;
 }
-/* line 44, ../../app/stylesheets/components/_structure.sass */
+/* line 43, ../../app/stylesheets/components/_edit_route_structure.sass */
 .pixel-row .pixel {
   border: 1px solid lightgrey;
   -moz-user-select: -moz-none;
@@ -66,12 +77,12 @@ body {
   user-select: none;
 }
 
-/* line 51, ../../app/stylesheets/components/_structure.sass */
+/* line 49, ../../app/stylesheets/components/_edit_route_structure.sass */
 .no-grid .pixel-row .pixel {
   border: none;
 }
 
-/* line 54, ../../app/stylesheets/components/_structure.sass */
+/* line 52, ../../app/stylesheets/components/_edit_route_structure.sass */
 #zoom-control-container {
   overflow: hidden;
   width: 65px;
@@ -81,30 +92,30 @@ body {
   -webkit-transition: width 0.2s ease;
   transition: width 0.2s ease;
 }
-/* line 61, ../../app/stylesheets/components/_structure.sass */
+/* line 59, ../../app/stylesheets/components/_edit_route_structure.sass */
 #zoom-control-container.show {
   width: 313px;
 }
-/* line 64, ../../app/stylesheets/components/_structure.sass */
+/* line 62, ../../app/stylesheets/components/_edit_route_structure.sass */
 #zoom-control-container > .button {
   background-color: #EEE;
 }
-/* line 67, ../../app/stylesheets/components/_structure.sass */
+/* line 65, ../../app/stylesheets/components/_edit_route_structure.sass */
 #zoom-control-container .button {
   width: 64px;
   border-right: 1px solid lightgrey;
 }
-/* line 71, ../../app/stylesheets/components/_structure.sass */
+/* line 69, ../../app/stylesheets/components/_edit_route_structure.sass */
 #zoom-control-container #zoom-button-container {
   width: 328px;
 }
-/* line 73, ../../app/stylesheets/components/_structure.sass */
+/* line 71, ../../app/stylesheets/components/_edit_route_structure.sass */
 #zoom-control-container #zoom-button-container .button {
   width: 30px;
   border-right: 1px solid lightgrey;
 }
 
-/* line 77, ../../app/stylesheets/components/_structure.sass */
+/* line 75, ../../app/stylesheets/components/_edit_route_structure.sass */
 .button {
   background-color: #FFF;
   height: 100%;
@@ -119,7 +130,7 @@ body {
   transition: background-color 0.2s ease;
 }
 
-/* line 88, ../../app/stylesheets/components/_structure.sass */
+/* line 86, ../../app/stylesheets/components/_edit_route_structure.sass */
 .button,
 .title {
   -moz-user-select: -moz-none;
@@ -127,23 +138,23 @@ body {
   -webkit-user-select: none;
   user-select: none;
 }
-/* line 92, ../../app/stylesheets/components/_structure.sass */
+/* line 90, ../../app/stylesheets/components/_edit_route_structure.sass */
 .button.selected,
 .title.selected {
   background-color: #EEE;
 }
-/* line 95, ../../app/stylesheets/components/_structure.sass */
+/* line 93, ../../app/stylesheets/components/_edit_route_structure.sass */
 .button:hover,
 .title:hover {
   background-color: #EEE;
 }
 
-/* line 98, ../../app/stylesheets/components/_structure.sass */
+/* line 96, ../../app/stylesheets/components/_edit_route_structure.sass */
 #colour-control-container {
   width: 175px;
   float: left;
 }
-/* line 102, ../../app/stylesheets/components/_structure.sass */
+/* line 100, ../../app/stylesheets/components/_edit_route_structure.sass */
 #colour-control-container input {
   width: 55px;
   font-family: "Open Sans Condensed", sans-serif;
@@ -152,7 +163,7 @@ body {
   margin-left: 0;
   cursor: pointer;
 }
-/* line 110, ../../app/stylesheets/components/_structure.sass */
+/* line 108, ../../app/stylesheets/components/_edit_route_structure.sass */
 #colour-control-container .title {
   background-color: #FFF;
   border: 1px solid lightgrey;
@@ -163,13 +174,13 @@ body {
   cursor: pointer;
 }
 
-/* line 119, ../../app/stylesheets/components/_structure.sass */
+/* line 117, ../../app/stylesheets/components/_edit_route_structure.sass */
 #tool-control-container {
   width: 168px;
   border-right: 1px solid lightgrey;
   float: left;
 }
-/* line 124, ../../app/stylesheets/components/_structure.sass */
+/* line 122, ../../app/stylesheets/components/_edit_route_structure.sass */
 #tool-control-container .title {
   background-color: #FFF;
   border: 1px solid lightgrey;
@@ -181,13 +192,207 @@ body {
   float: left;
   line-height: 32px;
 }
-/* line 135, ../../app/stylesheets/components/_structure.sass */
+/* line 133, ../../app/stylesheets/components/_edit_route_structure.sass */
 #tool-control-container .button {
   border-left: 1px solid lightgrey;
 }
 
-/* line 138, ../../app/stylesheets/components/_structure.sass */
+/* line 136, ../../app/stylesheets/components/_edit_route_structure.sass */
 #hide-grid-button {
   width: 80px;
   border-right: 1px solid lightgrey;
+}
+
+/* line 141, ../../app/stylesheets/components/_edit_route_structure.sass */
+#misc-control-container .button {
+  min-width: 40px;
+  width: auto;
+  padding: 0 5px;
+  border-right: 1px solid lightgrey;
+}
+/* line 147, ../../app/stylesheets/components/_edit_route_structure.sass */
+#misc-control-container .button.last-child {
+  border-right: 1px solid lightgrey;
+}
+
+/* line 2, ../../app/stylesheets/components/_login_route_structure.sass */
+.login-container {
+  width: 400px;
+  min-height: 210px;
+  border: 1px solid #ccc;
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+}
+/* line 9, ../../app/stylesheets/components/_login_route_structure.sass */
+.login-container .inner-login-container {
+  width: 100%;
+  height: 100%;
+}
+/* line 12, ../../app/stylesheets/components/_login_route_structure.sass */
+.login-container .inner-login-container .header {
+  width: 100%;
+  height: 50px;
+  background-color: #ccc;
+  margin-bottom: 10px;
+}
+/* line 19, ../../app/stylesheets/components/_login_route_structure.sass */
+.login-container .inner-login-container .header h1 {
+  text-align: center;
+  display: block;
+  line-height: 50px;
+  margin: 0;
+}
+/* line 24, ../../app/stylesheets/components/_login_route_structure.sass */
+.login-container .form {
+  padding: 20px;
+  padding-top: 0;
+}
+/* line 27, ../../app/stylesheets/components/_login_route_structure.sass */
+.login-container .form > * {
+  box-sizing: border-box;
+}
+/* line 30, ../../app/stylesheets/components/_login_route_structure.sass */
+.login-container .form h3.login-error {
+  color: #b40a0a;
+}
+/* line 33, ../../app/stylesheets/components/_login_route_structure.sass */
+.login-container .form input[type=text], .login-container .form input[type=password] {
+  width: 100%;
+  margin-top: 10px;
+  height: 35px;
+  font-size: 19px;
+  padding: 5px;
+}
+/* line 42, ../../app/stylesheets/components/_login_route_structure.sass */
+.login-container .form button {
+  height: 35px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* line 1, ../../app/stylesheets/components/_logout_route_structure.sass */
+.logout-container {
+  width: 400px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+/* line 7, ../../app/stylesheets/components/_logout_route_structure.sass */
+.logout-container .inner-logout-container h1 {
+  text-align: center;
+  display: block;
+}
+/* line 10, ../../app/stylesheets/components/_logout_route_structure.sass */
+.logout-container .inner-logout-container h3 {
+  text-align: center;
+  display: block;
+}
+/* line 13, ../../app/stylesheets/components/_logout_route_structure.sass */
+.logout-container .inner-logout-container h3.error {
+  color: #c81414;
+}
+/* line 15, ../../app/stylesheets/components/_logout_route_structure.sass */
+.logout-container .inner-logout-container button {
+  width: 200px;
+  height: 40px;
+  display: block;
+  margin: auto;
+}
+
+/* line 1, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container {
+  width: 100%;
+  display: block;
+}
+/* line 5, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .header {
+  width: 100%;
+  height: 50px;
+  background-color: #ccc;
+  position: relative;
+}
+/* line 11, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .header h1 {
+  text-align: center;
+  display: block;
+  line-height: 50px;
+  margin: 0;
+}
+/* line 16, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .header button {
+  position: absolute;
+  top: 5px;
+  float: right;
+  width: 150px;
+  height: 40px;
+}
+/* line 22, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .header button.new {
+  right: 170px;
+}
+/* line 24, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .header button.logout {
+  right: 10px;
+}
+/* line 27, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .documents-container {
+  width: 100%;
+  margin: auto;
+  display: block;
+  overflow: auto;
+  height: 100%;
+  padding-bottom: 20px;
+}
+/* line 35, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .documents-container .document {
+  -moz-transition: background-color 0.3s, border-radius 0.3s;
+  -o-transition: background-color 0.3s, border-radius 0.3s;
+  -webkit-transition: background-color 0.3s, border-radius 0.3s;
+  transition: background-color 0.3s, border-radius 0.3s;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  width: 30%;
+  border: 1px solid #ccc;
+  margin: 1.5%;
+  float: left;
+  padding: 10px 0;
+  cursor: pointer;
+}
+/* line 44, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .documents-container .document:hover {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #ddd;
+}
+/* line 48, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .documents-container .document:hover img {
+  border: 1px solid #ccc;
+}
+/* line 50, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .documents-container .document h4 {
+  margin: 10px;
+  margin-top: 0;
+  text-align: center;
+}
+/* line 54, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .documents-container .document > div,
+.load-container .inner-load-container .documents-container .document img {
+  width: 90%;
+  margin: auto;
+  display: block;
+}
+/* line 59, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .documents-container .document > div {
+  padding: 5px;
+}
+/* line 61, ../../app/stylesheets/components/_load_route_structure.sass */
+.load-container .inner-load-container .documents-container .document img {
+  -moz-transition: border-color 0.3s;
+  -o-transition: border-color 0.3s;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+  border: 1px solid transparent;
 }
